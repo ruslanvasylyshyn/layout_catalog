@@ -35,9 +35,14 @@
 
   &__stars-feedback,
   &__price {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-bottom: 15px;
+  }
+  
+  &__stars-feedback,
+  &__price-value {
+    text-align: right;
   }
 
   &_code {
@@ -57,7 +62,8 @@
 
 /* Стилізація зірок */
 .stars {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .stars__star {
@@ -77,7 +83,7 @@
 .card__btn {
   width: 170px;
   height: 40px;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
