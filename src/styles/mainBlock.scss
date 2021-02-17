@@ -1,12 +1,13 @@
 /* Основний контент */
 
 .main {
-  display: flex;
+  display: grid;
   justify-content: center;
 
   &__container {
     width: 1024px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 53px;

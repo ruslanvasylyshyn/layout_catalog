@@ -35,9 +35,14 @@
 
   &__stars-feedback,
   &__price {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-bottom: 15px;
+  }
+  
+  &__stars-feedback,
+  &__price-value {
+    text-align: right;
   }
 
   &_code {
@@ -57,27 +62,31 @@
 
 /* Стилізація зірок */
 .stars {
-  display: flex;
-}
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-.stars__star {
-  width: 15px;
-  height: 15px;
-  background-image: url("../images/star.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 4px;
-}
+  @for $i from 1 through 5 {
+    &--#{$i} :nth-child(-n + #{$i}) {
+      background-image: url("../images/star-active.svg");
+    }
+  }
 
-.stars--4 .stars__star:nth-child(-n+4) {
-  background-image: url("../images/star-active.svg");
+  &__star {
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+
 }
 
 /* Стилізація кнопки */
 .card__btn {
   width: 170px;
   height: 40px;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
